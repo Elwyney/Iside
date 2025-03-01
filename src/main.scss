@@ -1,0 +1,126 @@
+$primary-color: #0B0A0A;
+$pink-color: #FFCBB9;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $primary-color;
+    font-family: sans-serif;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    /* overflow: scroll; */
+    display: flex;
+    padding: 60px 0 0 0;
+    align-items: end;
+    min-height: 100vh;
+}
+
+
+.assistant-container {
+    display: flex;
+    flex-direction: column;
+    padding: 100px 0;
+    background-color: #141414;
+    border: 1px #695F5F solid;
+    border-radius: 75px 70px 0 0;
+    min-height: 88vh;
+    scrollbar-width: none;
+    bottom: 0;
+    width: 100%;
+    padding: 90px;
+    position: relative;
+
+    .assistant-title {
+        color: $pink-color;
+        font-size: 32px;
+    }
+
+
+    .btn-assis {
+        margin-top: 210px;
+
+        span:nth-child(1) {
+            text-decoration: underline;
+            color: white;
+            font-size: 24px;
+            margin-right: 15px;
+
+        }
+
+        span:nth-child(2) {
+            color: #656565;
+            font-size: 24px;
+            padding: 5px;
+            background-color: #3A3A3A;
+        }
+    }
+}
+
+@keyframes animeText {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.aswer {
+    width: 100%;
+    border-bottom: 1px solid rgba(105, 95, 95, 0.3019607843);
+    padding: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    span:nth-child(2) {
+        color: #3A3A3A;
+    }
+}
+
+.assistant-description {
+    animation: animeText 2s ease;
+    color: #d5d5d5;
+    font-size: 24px;
+
+}
+
+form {
+    background: linear-gradient(360deg, #0c0c0c, #0a0a0a, #0c0c0c00);
+    display: flex;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 90%;
+    width: 450px;
+    justify-content: center;
+    width: 100%;
+    height: 25%;
+    /* align-items: center; */
+    padding: 30px 0;
+
+    input {
+        border-radius: 11px;
+        border: 1px solid #737373;
+        background-color: #191919;
+        padding: 12px 25px;
+        color: white;
+        outline: none;
+        height: 40px;
+        min-width: 17%;
+    }
+
+    .size {
+        min-width: 40%;
+        transition: 1.2s ease;
+
+    }
+}
