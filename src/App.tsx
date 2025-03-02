@@ -9,7 +9,7 @@ const App = () => {
     },
     {
       id: 2,
-      title: 'как настроить',
+      title: 'Биткоин вырос в 7 раз за год. Потенциал роста был известен ещё в августе 2023 Потенциал роста был известен ещё в августе 2023',
     },
     {
       id: 3,
@@ -70,7 +70,7 @@ const App = () => {
 
           <div>
             <form action="">
-              <input className={``} onClick={() => setActivePrompt(true)} onChange={(e) => setPrompt(e.target.value)} type="text" />
+              <input placeholder='Поиск' className={``} onClick={() => setActivePrompt(true)} onChange={(e) => setPrompt(e.target.value)} type="text" />
             </form>
           </div>
 
