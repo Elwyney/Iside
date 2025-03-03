@@ -1,0 +1,18 @@
+$pink-color: #FFCBB9;
+
+.assistant-title {
+    color: $pink-color;
+    font-size: 32px;
+}
+
+.assistant-description {
+    animation: animeText 2s ease;
+    color: #d5d5d5;
+    font-size: 16px;
+    font-weight: 400;
+    max-width: 650px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+
+}

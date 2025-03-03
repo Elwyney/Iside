@@ -1,0 +1,12 @@
+.answer {
+    border-bottom: 1px solid rgba(105, 95, 95, 0.3019607843);
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    span:nth-child(2) {
+        color: #3A3A3A;
+        font-weight: 400;
+    }
+}
