@@ -10,17 +10,12 @@ const App = () => {
   const [prompt, setPrompt] = useState<string>('');
   const [activePrompt, setActivePrompt] = useState<boolean>(false);
   const filterData = data.filter((item) => item.title.toLowerCase().includes(prompt.toLowerCase())).splice(0, 20)
-
   return (
     <>
       <div className="container">
         <div style={filterData.length > 0 ? { boxShadow: '0px -10px 70px rgba(104, 104, 104, 0.23)' } : undefined}
              className="assistant-container">
-        {!activePrompt ? (
-          <WelcomeSection />
-        ) : (
-          <ResultList data={filterData} />
-        )}
+        {!activePrompt ? <WelcomeSection /> : <ResultList data={filterData} />}
           <div>
           <SearchInput 
               onClick={() => setActivePrompt(true)} 
