@@ -1,0 +1,15 @@
+nav {
+    padding: 50px 0;
+    display: flex;
+    gap: 50px;
+
+    a:nth-child(1) {
+        color: #000000;
+        border-bottom: 1px solid #000000;
+    }
+
+    a {
+        color: #8a8a8a;
+        font-size: 18px;
+    }
+}

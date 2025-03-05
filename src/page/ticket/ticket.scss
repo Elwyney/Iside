@@ -1,0 +1,29 @@
+.application {
+    background: #000000;
+    color: #ffffff;
+    padding: 12px 20px;
+    font-size: 16px;
+    display: inline-block;
+    margin-bottom: 110px;
+}
+
+.frames {
+    border-bottom: 1px solid #dfdfdf;
+    padding: 10px;
+    /* max-width: 800px; */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    /* border-top: 1px; */
+    border-top: 1px solid #dfdfdf;
+
+    span {
+        font-size: 18px;
+    }
+
+    span:nth-child(2) {
+        font-size: 16px;
+        color: #959595;
+    }
+}
