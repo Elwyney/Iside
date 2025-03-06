@@ -41,7 +41,7 @@ const data: Article[] = [
     title: "Если у вас возникла проблема с подписыванием сертификата, это может быть связано с различными причинами",
     keywords: ["технологии", "искусственный интеллект", "инновации"],
     elements: [
-      { type: "header", data: "Введение" },
+      { type: "header", data: "Введение!" },
       { type: "paragraph", data: "Next.js is a React framework for building full-stack web applications. You use React Components to build user interfaces, and Next.js for additional features and optimizations.Next.js is a React framework for building full-stack web applications. You use React Components to build user interfaces, and Next.js for additional features and optimizations." },
       { type: "image", data: { url: "https://res.cloudinary.com/hl8zoliad/raw/upload/npm/@types/react-router-dom.png", alt: "Описание изображения 1" } },
       { type: "paragraph", data: "Основной текст статьи." },
