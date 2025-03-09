@@ -1,3 +1,4 @@
+import React from 'react';
 import { useParams } from 'react-router-dom';
 
 // Интерфейсы
@@ -15,7 +16,7 @@ interface Article {
 
 // Компонент страницы
 const Page = () => {
-
+    //нужны данные
     const { id } = useParams();
     const article = data.find((item) => item.id === id); // Используем find вместо filter
 
