@@ -35,7 +35,6 @@
 }
 
 .frames {
-    border-bottom: 1px solid #dfdfdf;
     padding: 10px;
     /* max-width: 800px; */
     display: flex;
@@ -46,6 +45,7 @@
     border-top: 1px solid #dfdfdf;
 
     span {
+        color: black;
         font-size: 18px;
     }
 
@@ -53,4 +53,22 @@
         font-size: 16px;
         color: #959595;
     }
+}
+h1 {
+    font-size: 40px;
+    text-align: center;
+    /* font-family: fantasy; */
+    color: #268fff;
+}
+.message {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 50px 0;
+    .name {
+        color: #959595;
+    }
+}
+.chatPanel .inputField--mgSyJ {
+    min-width: 100%;
 }

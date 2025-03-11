@@ -1,5 +1,5 @@
 import Frames from './frames';
-import './ticket.scss'
+import './ticket.scss';
 
 const Ticket = () => {
     return (

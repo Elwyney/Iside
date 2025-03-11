@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import Page from '../../Page';
+import Page from '../../page/Page';
 import Ticket from '../../page/ticket/ticket';
 import ResultList from '../resultList/ResultList';
 import './nav.scss'
 import { Routes, Route, NavLink } from "react-router";
+import Chat from '../../page/ticket/chat';
 
 const Nav = () => {
     const [currentLine, setCurrentLine] = useState<number>(0)
@@ -38,6 +39,7 @@ const Nav = () => {
             <Routes>
                 <Route path="/:id" element={<Page />} />
                 <Route path="/ticket" element={<Ticket />} />
+                <Route path="/chat/:id" element={<Chat />} />
             </Routes>
         </>
     )
