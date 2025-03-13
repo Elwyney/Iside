@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { NavLink } from "react-router-dom";
 import SearchInput from '../components/searchInput/SearchInput';
 import dataS from '../data'
+import { useQuery } from '@tanstack/react-query';
 interface ArticleElement {
   type: "header" | "paragraph" | "image" | "quote" | "video";
   data: string | { url: string; alt: string } | { url: string; title: string };
@@ -15,59 +16,28 @@ interface Article {
   elements: ArticleElement[];
 }
 
-const ResultList = () => {
-  const [articles, setArticles] = useState<Article[]>([{
-    "id": 1,
-    "title": "Путешествие по миру программирования",
-    "keywords": ["программирование", "путешествие", "технологии", "разработка"],
-    "elements": [
-      {
-        "type": "header",
-        "data": "Введение в программирование"
-      },
-      {
-        "type": "paragraph",
-        "data": "Программирование — это искусство создания программ, которые решают задачи и автоматизируют процессы."
-      },
-      {
-        "type": "image",
-        "data": {
-          "url": "https://example.com/programming.jpg",
-          "alt": "Изображение программирования"
-        }
-      },
-      {
-        "type": "quote",
-        "data": "Программирование — это не просто работа, это стиль жизни."
-      },
-      {
-        "type": "video",
-        "data": {
-          "url": "https://example.com/programming-intro.mp4",
-          "title": "Введение в программирование"
-        }
-      },
-      {
-        "type": "paragraph",
-        "data": "В этом видео мы рассмотрим основные концепции программирования и его важность в современном мире."
-      },
-      {
-        "type": "header",
-        "data": "Заключение"
-      },
-      {
-        "type": "paragraph",
-        "data": "Программирование открывает множество возможностей для творчества и инноваций."
-      }
-    ]
-  }]);
+const ArticlesList = () => {
+  const fetchUsers = async () => {
+    const response = await fetch('https://jsonplaceholder.typicode.com/users');
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+  };
+  const { data, error, isLoading } = useQuery({
+    queryKey: ['users'], // Здесь мы используем queryKey
+    queryFn: fetchUsers, // Здесь мы указываем функцию для получения данных
+  });
+  console.log(data);
 
   const [prompt, setPrompt] = useState<string>('');
 
   const filteredArticles = dataS.filter((item) =>
     item.title.toLowerCase().includes(prompt.toLowerCase())
   ).slice(0, 20);
-
+  
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>Перезагрузите страницу</div>;
   return (
     <>
       <SearchInput onChange={(e) => setPrompt(e.target.value)} />
@@ -85,4 +55,4 @@ const ResultList = () => {
   );
 };
 
-export default ResultList;
+export default ArticlesList;

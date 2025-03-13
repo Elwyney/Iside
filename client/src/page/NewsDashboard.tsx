@@ -16,7 +16,7 @@ interface Article {
 }
 
 // Компонент страницы
-const Page = () => {
+const NewsDashboard = () => {
     const { id } = useParams<{ id: string }>();
     const article = dataS.find((item) => item.id === Number(id)); // Преобразуем id в число
 
@@ -66,4 +66,4 @@ const Page = () => {
     );
 };
 
-export default Page;
+export default NewsDashboard;
