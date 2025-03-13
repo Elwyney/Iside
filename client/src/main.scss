@@ -35,35 +35,3 @@ body {
         opacity: 1;
     }
 }
-
-.content {
-    .pagetitle {
-        font-family: 'Inter Bold';
-        font-size: 22px;
-        margin-bottom: 30px;
-        color: #000000;
-    }
-
-    color: #333333;
-    font-size: 17px;
-    line-height: 1.6;
-
-    img {
-        margin: 50px 0;
-        max-width: 700px;
-    }
-
-    p {
-        margin-bottom: 10px;
-    }
-}
-.close {
-        background: #d7d7d7;
-        /* padding: 10px; */
-        display: inline-block;
-        color: #333333;
-        border-radius: px;
-        padding: 5px 20px;
-        font-size: 16px;
-        margin-bottom: 50px;
-}

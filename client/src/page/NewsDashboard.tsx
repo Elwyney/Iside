@@ -1,6 +1,7 @@
+import './NewsDashboards.scss'
 import React from 'react';
-import { useParams } from 'react-router-dom';
-
+import { useParams, Link } from 'react-router-dom';
+import dataS from '../data'
 // Интерфейсы
 interface ArticleElement {
     type: "header" | "paragraph" | "image" | "quote" | "video";
@@ -16,17 +17,15 @@ interface Article {
 
 // Компонент страницы
 const Page = () => {
-    //нужны данные
-    const { id } = useParams();
-    const article = data.find((item) => item.id === id); // Используем find вместо filter
+    const { id } = useParams<{ id: string }>();
+    const article = dataS.find((item) => item.id === Number(id)); // Преобразуем id в число
 
-    // Рендер элемента
     const renderElement = (element: ArticleElement, index: number) => {
         switch (element.type) {
             case 'header':
-                return <h1 className='pagetitle' key={index}>{element.data}</h1>;
+                return <h1 className='pagetitle' key={index}>{element.data as string}</h1>; // Приведение типа к строке
             case 'paragraph':
-                return <p key={index}>{element.data}</p>;
+                return <p key={index}>{element.data as string}</p>; // Приведение типа к строке
             case 'image':
                 return (
                     <img
@@ -48,7 +47,7 @@ const Page = () => {
                     />
                 );
             case 'quote':
-                return <blockquote key={index}>{element.data}</blockquote>;
+                return <blockquote key={index}>{element.data as string}</blockquote>; // Приведение типа к строке
             default:
                 return null;
         }
@@ -61,7 +60,7 @@ const Page = () => {
 
     return (
         <div className='content'>
-            <a className='close' href="">Назад к списку</a>
+            <Link className='close' to="/">Назад к списку</Link>
             {article.elements.map((item, index) => renderElement(item, index))}
         </div>
     );
